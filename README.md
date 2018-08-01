@@ -1,5 +1,5 @@
 # docker-alpine-openvpn
-An [OpenVPN Server](https://openvpn.net/) docker image for x86-64 architecture based on [Alpine Linux](https://alpinelinux.org/) with [S6 overlay](https://github.com/just-containers/s6-overlay). Available on [DockerHub](https://hub.docker.com/r/ishkanan/alpine-openvpn/).
+An [OpenVPN Server](https://openvpn.net/) docker image for x86-64 architecture based on [Alpine Linux](https://alpinelinux.org/) with [S6 overlay](https://github.com/just-containers/s6-overlay). Available on [DockerHub](https://hub.docker.com/r/ishkanan/alpine-openvpn/) and [GitHub](https://github.com/ishkanan/docker-alpine-openvpn/).
 
 This image is based on the [Alpine S6 base image](https://hub.docker.com/r/lsiobase/alpine/) maintained by the [LinuxServer.io](https://www.linuxserver.io) team, and thus includes:
 
