@@ -13,6 +13,8 @@ The container needs to be run in "host" networking mode. If that is not desired,
 
 ## Usage
 
+Create via the CLI:
+
 ```
 docker create \
   --name=openvpn \
@@ -24,11 +26,32 @@ docker create \
   ishkanan/alpine-openvpn
 ```
 
+Create and run via a Docker Compose (v2.1) file:
+
+```
+...
+
+  openvpn:
+    image: ishkanan/alpine-openvpn
+    container_name: openvpn
+    volumes:
+      - <path to data>:/etc/openvpn
+    cap_add:
+      - NET_ADMIN
+    network_mode: "host"
+    privileged: true
+    environment:
+      - PUID=<uid>
+      - PGID=<gid>
+      - TZ=<timezone>
+...
+```
+
 ## Parameters
 
 | Parameter | Description |
 | --- | --- |
-| -v /etc/openvpn | Folder where OpenVPN stores its config. Logs are stored in a ```logs``` subfolder. |
+| -v /etc/openvpn | Folder where OpenVPN stores its config. Logs location is specified in the config file, but a ```logs``` folder is created (if it doesn't exist) for convenience. |
 | -e PGID | Set GID for volumes. |
 | -e PUID | Set UID for volumes. |
 

@@ -2,16 +2,13 @@
 
 # make folders
 mkdir -p \
-  /run \
-  /var/log/openvpn
-
-# symlink log folder
-ln -s /var/log/openvpn /etc/openvpn/logs
+  /run/openvpn \
+  /etc/openvpn/logs
 
 # permissions
 chown -R abc:abc \
   /etc/openvpn \
-  /run
+  /run/openvpn
 chmod -R g+w \
   /etc/openvpn
 chmod -R 644 \
