@@ -51,7 +51,7 @@ Create and run via a Docker Compose (v2.1) file:
 
 | Parameter | Description |
 | --- | --- |
-| -v /etc/openvpn | Folder where OpenVPN stores its config. Logs location is specified in the config file, but a ```logs``` folder is created (if it doesn't exist) for convenience. |
+| -v /etc/openvpn | Folder where OpenVPN expects to find a file named ```openvpn.conf```. Although the logs location is specified in the config file, a ```logs``` folder is created here (if it doesn't exist) for convenience. The image does not modify any other files in this volume, so it is safe to store things such as certificates, keys and other configuration items here. |
 | -e PGID | Set GID for volumes. |
 | -e PUID | Set UID for volumes. |
-
+| -e TZ | Set a Linux-type timezone (e.g. ```Australia/Melbourne```). |
