@@ -1,0 +1,3 @@
+#!/usr/bin/with-contenv bash
+
+exec /usr/sbin/openvpn --status /run/openvpn/openvpn.status 10 --cd /etc/openvpn --script-security 2 --config /etc/openvpn/openvpn.conf --writepid /run/openvpn/openvpn.pid

@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+  /run \
+  /var/log/openvpn
+
+# symlink log folder
+ln -s /var/log/openvpn /etc/openvpn/logs
+
+# permissions
+chown -R abc:abc \
+  /etc/openvpn \
+  /run
+chmod -R g+w \
+  /etc/openvpn
+chmod -R 644 \
+  /etc/logrotate.d
