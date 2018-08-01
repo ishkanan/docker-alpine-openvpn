@@ -8,15 +8,11 @@ RUN \
   echo "*** install openvpn server ***" && \
   apk add --no-cache --purge -uU \
     openvpn && \
-  rm -rf /var/cache/apk/* /tmp/* && \
-  echo "*** configure tun device ***" && \
-  modprobe tun && \
-  echo "tun" >> /etc/modules
+  rm -rf /var/cache/apk/* /tmp/*
 
-# hook in to S6
+# overlay folder (S6 inject)
 COPY root/ /
 
-# ports and volumes
-EXPOSE 1194
+# volumes
 VOLUME /etc/openvpn
 
